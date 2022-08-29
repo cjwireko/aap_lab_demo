@@ -8,8 +8,13 @@
       name: httpd
       state: latest 
 
-  - name: latest Apache version installed
+  - name: Apache enabled and running
     ansible.builtin.service:
       name: httpd
       enabled: true
-      state: started 
+      state: started
+ 
+  - name: copy web.html
+    ansible.builtin.copy:
+      src: web.html
+      dest: /var/www/html/index.html 
