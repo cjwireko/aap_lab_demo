@@ -1,0 +1,13 @@
+---
+- name: Create users
+  hosts: node1.canary.local
+  become: true
+  tasks: 
+    - name: Create 3 users
+      ansible.builtin.user:
+        name: "{{ item }}"
+        state: present
+      loop:
+         - dev_user
+         - qa_user
+         - prod_user
