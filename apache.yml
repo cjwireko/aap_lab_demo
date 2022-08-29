@@ -1,6 +1,6 @@
 ---
 - name: Apache server install
-  hosts: node1.canary.local
+  hosts: web
   become: true
   tasks: 
   - name: latest Apache version installed
