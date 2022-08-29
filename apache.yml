@@ -16,5 +16,5 @@
  
   - name: copy web.html
     ansible.builtin.copy:
-      src: web.html
+      src: "{{ stage }}_ web.html"
       dest: /var/www/html/index.html 
